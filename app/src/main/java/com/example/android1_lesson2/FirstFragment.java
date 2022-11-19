@@ -69,7 +69,8 @@ public class FirstFragment extends Fragment {
                         bundle.putString(TEXT_BUNDLE_KEY, text);
                         bundle.putString(IMAGE_BUNDLE_KEY, imageForSend.toString());
                         getParentFragmentManager().beginTransaction()
-                            .add(R.id.fragment_container, SecondFragment.class, bundle)
+                                .setCustomAnimations(R.anim.enter_right_to_left,R.anim.enter_left_to_right)
+                                .add(R.id.fragment_container, SecondFragment.class, bundle)
                             .addToBackStack("FirstFragment")
                             .commit();
                     }

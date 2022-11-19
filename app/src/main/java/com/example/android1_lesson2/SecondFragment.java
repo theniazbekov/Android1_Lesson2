@@ -46,6 +46,7 @@ public class SecondFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 getActivity().getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(R.anim.enter_right_to_left,R.anim.enter_left_to_right)
                         .replace(R.id.fragment_container, thirdFragment, "ThirdFragment")
                         .addToBackStack(null)
                         .commit();

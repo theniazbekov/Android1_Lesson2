@@ -45,6 +45,8 @@ public class ThirdFragment extends Fragment {
 
                 if (login.equals("Suba") && password.equals("password")) {
                     getActivity().getSupportFragmentManager().beginTransaction()
+                            .setCustomAnimations(R.anim.enter_right_to_left, R.anim.enter_left_to_right)
+
                             .replace(R.id.fragment_container, firstFragment, "First Fragment")
                             .addToBackStack(null)
                             .commit();
@@ -55,13 +57,13 @@ public class ThirdFragment extends Fragment {
                     if (!password.equals("password")) {
                         etPassword.setError("falls");
                     }
-                    if (!login.equals("Suba") && !password.equals("password")){
+                    if (!login.equals("Suba") && !password.equals("password")) {
                         etLogin.setError("falls");
                         etPassword.setError("falls");
                     }
 
-                    }
                 }
-            });
+            }
+        });
     }
 }
